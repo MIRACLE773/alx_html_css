@@ -1,0 +1,38 @@
+/* Make the whole page a flex container with vertical stacking */
+body {
+  display: flex;
+  flex-direction: column; /* stack header, main, footer vertically */
+  min-height: 100vh; /* make sure body covers the full height */
+  margin: 0;
+}
+
+/* Make <main> a flex container with horizontal layout */
+main {
+  display: flex;
+  flex-direction: row; /* side by side layout */
+  flex: auto; /* auto height and width */
+}
+
+/* Make article take 2/3 of the width */
+article {
+  flex: 2; /* 2 boxes */
+  padding: 20px;
+  background-color: #f0f0f0;
+  overflow-y: auto; /* scrollable */
+}
+
+/* Make aside take 1/3 of the width */
+aside {
+  flex: 1; /* 1 box */
+  padding: 20px;
+  background-color: #d0d0d0;
+  overflow-y: auto; /* scrollable */
+}
+
+/* Style header and footer */
+header, footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
