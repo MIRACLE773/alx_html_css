@@ -1,0 +1,24 @@
+/* base.css */
+body {
+  background-color: darkgoldenrod;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h3 {
+  color: green;
+  background-color: yellow;
+  padding: 10px;
+}
+
+h2 {
+  color: black;
+  background-color: green;
+  padding: 8px;
+}
+
+a {
+  color: red;
+  text-decoration: underline;
+}
