@@ -1,0 +1,274 @@
+/* ================================================
+   🌟 RESET STYLES
+   This removes all browser default padding/margin
+   and ensures all elements are sized properly.
+   ================================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ================================================
+   🌟 BODY STYLING
+   Sets the font, background color, text color, and
+   prevents the page from scrolling sideways.
+   ================================================ */
+body {
+  font-family: "Poppins", sans-serif; /* Modern font */
+  background-color: #111;             /* Dark background */
+  color: #fff;                        /* White text */
+  line-height: 1.6;                   /* Comfortable spacing between lines */
+  overflow-x: hidden;                 /* Prevent horizontal scroll */
+}
+
+/* ================================================
+   🌟 HEADER SECTION
+   Sets the hero background image and makes it cover
+   the full screen height.
+   ================================================ */
+header {
+  background: url("./images/headphones_hero_1.jpg") no-repeat center center/cover;
+  height: 100vh; /* Full viewport height */
+  position: relative; /* Needed for positioning the overlay and nav */
+  color: #fff;
+}
+
+/* ================================================
+   🌟 DARK OVERLAY
+   Adds a semi-transparent dark layer over the background
+   image to make white text more visible.
+   ================================================ */
+header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Black with 60% opacity */
+}
+
+/* ================================================
+   🌟 HEADER CONTAINER
+   Holds the entire header content (nav + hero text)
+   and keeps it centered and properly spaced.
+   ================================================ */
+.header {
+  position: relative;
+  z-index: 2; /* Ensures content stays above the dark overlay */
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 20px; /* Adds space between top and header content */
+}
+
+/* ================================================
+   🌟 NAVIGATION BAR
+   Positions the logo and links at the very top of the page.
+   ================================================ */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  position: absolute; /* Fixes the nav at the top of the header */
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%); /* Centers the nav horizontally */
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* ================================================
+   🌟 LOGO IMAGE
+   Makes the logo smaller and clickable.
+   ================================================ */
+.logo {
+  width: 200px;
+  cursor: pointer;
+  margin-left: -200px;
+}
+
+/* ================================================
+   🌟 NAV MENU STYLING
+   Removes bullets, spaces items evenly, and adds
+   hover effects.
+   ================================================ */
+nav ul {
+  list-style: none; /* Removes bullets */
+  display: flex; /* Places links side by side */
+  gap: 30px; /* Adds space between links */
+  margin-right: -200px;
+}
+
+nav ul li a {
+  text-decoration: none; /* Removes underline */
+  color: #fff;           /* White text color */
+  font-weight: 500;      /* Slightly bold text */
+  transition: color 0.3s ease; /* Smooth hover color change */
+}
+
+/* Hover effect for links */
+nav ul li a:hover {
+  color: #ff4d6d; /* Pinkish hover color */
+}
+
+/* ================================================
+   🌟 HERO CONTENT (MAIN HEADER TEXT AREA)
+   Centers the title, button, and paragraph in the header.
+   ================================================ */
+.header-content {
+  max-width: 700px;
+  margin: 280px auto 0; /* Moves content down to make room for the nav */
+  text-align: center;   /* Centers all text */
+}
+
+/* ================================================
+   🌟 MAIN TITLE
+   Big and bold headline for the hero section.
+   ================================================ */
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-transform: capitalize;
+}
+
+/* ================================================
+   🌟 CALL TO ACTION BUTTON
+   Creates a rounded button with hover animation.
+   ================================================ */
+#cta {
+  background-color: #ff4d6d;        /* Pink background */
+  border: none;                     /* No border */
+  color: white;                     /* White text */
+  padding: 12px 30px;               /* Space inside button */
+  border-radius: 30px;              /* Rounded edges */
+  cursor: pointer;                  /* Pointer cursor on hover */
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover effect */
+}
+
+/* Hover effect for the button */
+#cta:hover {
+  background-color: #ff3358; /* Darker pink on hover */
+  transform: scale(1.05);    /* Slight zoom effect */
+}
+
+/* ================================================
+   🌟 HERO PARAGRAPH
+   Description text under the button.
+   ================================================ */
+.header-content p {
+  font-size: 1rem;
+  color: #ddd;       /* Light gray text for readability */
+  line-height: 1.7;  /* Nice spacing between lines */
+  margin-top: px;
+}
+
+/* ================================================
+   MAIN AND FOOTER PLACEHOLDERS
+   Just simple styling for now until content is added.
+   ================================================ */
+main, footer {
+  padding: 0px;
+  text-align: center;
+}
+
+
+
+/* ==========================================================
+   📱 RESPONSIVE DESIGN (FOR PHONES & TABLETS)
+   Fixes hero section text and button for smaller screens.
+   ========================================================== */
+
+/* When screen width is 768px or smaller (tablets & phones) */
+@media screen and (max-width: 768px) {
+
+  /* Make header content fit smaller screens */
+  .header {
+    width: 95%;
+    padding-top: 10px;
+  }
+
+  /* Stack nav items vertically and center them */
+  nav {
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    transform: none;
+    left: auto;
+  }
+
+  /* Make logo smaller and centered */
+  .logo {
+    width: 150px;
+    margin: 0 auto 10px auto;
+  }
+
+  /* Stack nav links vertically */
+  nav ul {
+    flex-direction: column;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+  }
+
+  nav ul li a {
+    font-size: 1.1rem;
+  }
+
+  /* ===============================
+     🌟 HERO TEXT FIXES
+     Center the text and make it smaller.
+     =============================== */
+  .header-content {
+    margin: 150px auto 0; /* Lower the hero text */
+    padding: 0 15px;
+    text-align: center;
+  }
+
+  /* Make the title smaller */
+  .title {
+    font-size: 1.6rem;
+    line-height: 1.3;
+  }
+
+  /* Make the button centered and smaller */
+  #cta {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 25px;
+    font-size: 0.9rem;
+  }
+
+  /* Make paragraph smaller and centered */
+  .header-content p {
+    font-size: 0.9rem;
+    margin-top: 15px;
+    line-height: 1.5;
+    color: #ccc;
+  }
+}
+
+/* When screen width is 480px or smaller (small phones) */
+@media screen and (max-width: 480px) {
+  .title {
+    font-size: 1.4rem;
+  }
+
+  .header-content {
+    margin: 120px auto 0;
+  }
+
+  .header-content p {
+    font-size: 0.85rem;
+  }
+
+  #cta {
+    width: 80%;
+    font-size: 0.9rem;
+  }
+}
